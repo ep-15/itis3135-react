@@ -1,0 +1,430 @@
+body {
+    background-color: #f2f4f7;
+    color: #2b2b2b;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+header, main, footer {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fafbfc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a365d;
+}
+
+h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #2b6cb0;
+}
+
+h6 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+}
+
+a {
+    color: #2b6cb0;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+    color: #1a365d;
+}
+
+nav a {
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+nav a {
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.secondary-nav {
+    margin-top: 8px;
+    font-size: 0.85em;
+}
+
+.secondary-nav a {
+    font-weight: normal;
+    color: #555555;
+}
+
+.secondary-nav a:hover,
+.secondary-nav a:focus {
+    color: #1a365d;
+}
+
+figure {
+    text-align: center;
+    margin: 20px 0;
+}
+
+figure img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 6px;
+}
+
+figcaption {
+    font-style: italic;
+    color: #555555;
+    margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header, main, footer {
+        padding: 10px;
+    }
+}
+p a, li a {
+    text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #b8c2cf;
+    padding: 6px;
+    text-align: left;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+}
+
+pre {
+    overflow-x: auto;
+}
+
+.pictures figure img {
+    max-width: 100%;     
+    height: auto;
+}
+
+.pictures hr {
+    margin: 40px 0;
+}
+
+.pictures article {
+    margin: 24px 0;
+}
+
+.pictures figure > ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.pictures .strip {
+    display: flex;
+    align-items: flex-start;
+    justify-content: safe center;
+    gap: 16px;
+    overflow-x: auto; 
+}
+
+.pictures .strip figure {
+    display: table;  
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.pictures .strip figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    font-size: 0.85em;
+}
+
+.pictures .strip img {
+    max-width: none; 
+}
+
+.pictures .reduced {
+    width: 600px;
+    aspect-ratio: 3 / 2;
+}
+
+.pictures .squish figure:nth-child(1) img { width: 240px; height: 107px; }
+.pictures .squish figure:nth-child(2) img { width: 240px; height: 72px; }
+.pictures .squish figure:nth-child(3) img { width: 161px; height: 160px; }
+.pictures .squish figure:nth-child(4) img { width: 108px; height: 160px; }
+
+.pictures .enlarge img {
+    width: 400px;
+    height: 267px;
+}
+
+#picturePreview {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.intro-form fieldset {
+    border: 1px solid #b8c2cf;
+    border-radius: 6px;
+    margin: 0 0 16px 0;
+    padding: 10px 14px 14px;
+}
+
+.intro-form legend {
+    font-weight: bold;
+    color: #1a365d;
+    padding: 0 6px;
+}
+
+.intro-form label {
+    display: block;
+    margin: 10px 0 0;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.intro-form input[type="text"],
+.intro-form input[type="url"],
+.intro-form input[type="file"],
+.intro-form textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+    padding: 6px;
+    font: inherit;
+    font-weight: normal;
+    border: 1px solid #b8c2cf;
+    border-radius: 4px;
+    background-color: #ffffff; /* white field/button background so it stands out from the gray page */
+}
+
+.intro-form .course-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed #b8c2cf;
+}
+
+.intro-form .course-row input[type="text"] {
+    margin-top: 0;
+}
+
+.intro-form .course-row input[name="courseTitle"],
+.intro-form .course-row input[name="reasonForTaking"],
+.intro-form .course-row .delete-course {
+    grid-column: 1 / -1;
+}
+
+.intro-form .course-row .delete-course {
+    justify-self: start;
+}
+
+.intro-form .link-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.intro-form .link-row input {
+    margin-top: 0;
+}
+
+.intro-form button {
+    font: inherit;
+    padding: 6px 14px;
+    border: 1px solid #2b6cb0;
+    border-radius: 4px;
+    background-color: #2b6cb0;
+    color: #ffffff; /* white text for contrast on the dark button */
+    cursor: pointer;
+}
+
+.intro-form button:hover,
+.intro-form button:focus {
+    background-color: #1a365d;
+}
+
+.intro-form .delete-course {
+    background-color: #ffffff; /* white field/button background so it stands out from the gray page */
+    color: #9b2c2c;
+    border-color: #9b2c2c;
+}
+
+.intro-form .delete-course:hover,
+.intro-form .delete-course:focus {
+    background-color: #9b2c2c;
+    color: #ffffff; /* white text for contrast on the dark button */
+}
+
+.intro-form .form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#outputs .output textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85em;
+    padding: 8px;
+    border: 1px solid #b8c2cf;
+    border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+    .intro-form .course-row,
+    .intro-form .link-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Introduction Fetch (class yearbook) */
+.yearbook-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 12px;
+    margin: 20px 0 10px;
+}
+
+.yearbook-tools label {
+    display: block;
+    width: 100%;
+    margin-bottom: -8px;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.yearbook-tools input[type="search"],
+.yearbook-tools select {
+    flex: 1 1 200px;
+    box-sizing: border-box;
+    padding: 6px;
+    font: inherit;
+    border: 1px solid #b8c2cf;
+    border-radius: 4px;
+    background-color: #ffffff; /* white field background so the inputs stand out from the gray page */
+}
+
+.yearbook-tools button {
+    font: inherit;
+    padding: 6px 14px;
+    border: 1px solid #2b6cb0;
+    border-radius: 4px;
+    background-color: #2b6cb0;
+    color: #ffffff; /* white text for contrast on the dark blue button */
+    cursor: pointer;
+}
+
+.yearbook-tools button:hover,
+.yearbook-tools button:focus {
+    background-color: #1a365d;
+}
+
+#spotlight {
+    border: 1px solid #b8c2cf;
+    border-radius: 6px;
+    padding: 4px 14px 10px;
+    background-color: #ffffff; /* white box so the spotlight stands out from the gray page */
+}
+
+#yearbook {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.student {
+    background-color: #ffffff; /* white card background so each student stands out from the gray page */
+    border: 1px solid #b8c2cf;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+}
+
+.student figure {
+    margin: 0 0 10px;
+}
+
+.student figure img {
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.student-name {
+    margin: 6px 0 2px;
+    color: #1a365d;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.student .mascot {
+    margin: 0 0 8px;
+    font-weight: bold;
+    color: #2b6cb0;
+}
+
+.student blockquote {
+    margin: 8px 0;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.student details {
+    text-align: left;
+    font-size: 0.85em;
+}
+
+.student summary {
+    cursor: pointer;
+    font-weight: bold;
+}
