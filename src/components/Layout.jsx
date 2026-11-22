@@ -18,6 +18,11 @@ export default function Layout() {
       const s = document.createElement('script')
       s.src = src
       if (crossOrigin) s.crossOrigin = crossOrigin
+      // Tell scripts that wait for page-load events that the "page" is ready
+      s.onload = () => {
+        document.dispatchEvent(new Event('DOMContentLoaded', { bubbles: true }))
+        window.dispatchEvent(new Event('load'))
+      }
       document.body.appendChild(s)
       return s
     })
