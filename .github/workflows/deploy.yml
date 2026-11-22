@@ -20,8 +20,10 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm run build
-      # Lets refreshing on /about work: Pages serves 404.html for unknown paths
-      - run: cp dist/index.html dist/404.html
+      # Give every page its own real file (so /about is a normal 200 page), plus a 404 fallback
+      - run: |
+          cp dist/index.html dist/404.html
+          for page in introduction contract about; do cp dist/index.html "dist/$page.html"; done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

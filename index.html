@@ -6,10 +6,12 @@
     <link rel="icon" type="image/jpeg" href="/images/favico.jpg" />
     <link rel="stylesheet" href="/styles/default.css" />
     <title>Ethan Primak's Elegant Panda | ITIS3135</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- Justification: React requires one div with an id of "root" to mount the whole app into. The only class used is secondary-nav, on the second nav so the CSS can style it differently. No spans are used. -->
+    <!-- Justification: the div with the id root is required by React as the one place the whole app is mounted. The two data-include divs hold the shared header and footer loaded from components/header.html and components/footer.html, the same way the original site did. The only class used is secondary-nav, on the second nav so the CSS can style it differently. No spans are used. -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
   </body>
 </html>

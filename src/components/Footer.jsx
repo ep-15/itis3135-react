@@ -1,19 +1,6 @@
+import Include from './Include.jsx'
+import footerHtml from '../../public/components/footer.html?raw'
+
 export default function Footer() {
-  return (
-    <footer>
-      <nav>
-        <a href="https://webpages.charlotte.edu/eprimak/">CLT Web</a> |{' '}
-        <a href="https://ep-15.github.io/">GitHub.io</a> |{' '}
-        <a href="https://github.com/ep-15">GitHub</a> |{' '}
-        <a href="https://www.freecodecamp.org/eprimak">freeCodeCamp</a> |{' '}
-        <a href="https://www.codecademy.com/profiles/eprimak">Codecademy</a> |{' '}
-        <a href="https://www.linkedin.com/in/ethan-p-89a092440/">LinkedIn</a>
-      </nav>
-      <p>
-        Page created by <a href="https://ep-15.github.io/itis3135/eprimakdesigns.co/">E. Primak Designs </a>| Certified in{' '}
-        <a href="https://www.freecodecamp.org/certification/eprimak/responsive-web-design-v9">Responsive Web Design</a>
-      </p>
-      <p><em>"Progress over perfection"</em></p>
-    </footer>
-  )
+  return <Include file="components/footer.html" html={footerHtml} />
 }
