@@ -13,7 +13,7 @@ export default function Contract() {
 
       <p>Signed: <em>Ethan Primak</em>, Date: <em>09/07/2026</em></p>
       <figure>
-        <img src="/images/panda.jpg" alt="A panda eating bamboo, which is also my mascot" />
+        <img src={`${import.meta.env.BASE_URL}images/panda.jpg`} alt="A panda eating bamboo, which is also my mascot" />
         <figcaption>Elegant Panda, my course mascot</figcaption>
       </figure>
     </main>

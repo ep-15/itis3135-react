@@ -2,7 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/itis3135-react/',
+  // On GitHub Pages the site lives at /itis3135-react/. Locally (and on Vercel) it lives at /.
+  // GitHub Actions sets GITHUB_ACTIONS automatically, so the right value is picked for you.
+  base: process.env.GITHUB_ACTIONS ? '/itis3135-react/' : '/',
   plugins: [react()],
   build: {
     rollupOptions: {

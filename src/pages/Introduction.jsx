@@ -8,7 +8,7 @@ export default function Introduction() {
       <h6>Ethan "EP" Primak | Elegant Panda</h6>
 
       <figure>
-        <img src="/images/selfie.jpg" alt="A random selfie" />
+        <img src={`${import.meta.env.BASE_URL}images/selfie.jpg`} alt="A random selfie" />
         <figcaption>Random selife of me</figcaption>
       </figure>
 
