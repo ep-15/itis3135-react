@@ -11,7 +11,14 @@ const READY_EVENTS = ['DOMContentLoaded', 'load', 'readystatechange']
 // On a normal page the checker runs when the browser finishes loading. React has already
 // finished "loading" by the time a page renders, so those events never fire again.
 // This loads the checker and, once, runs whatever it asked to run at page load.
-function loadCheckerLikeFreshPage(isCancelled) {
+// Other scripts may add elements to <head>/<body> after ours. The checker wants the Accumulus script
+// last in <head> and itself last in <body>, so put them back at the end right before it looks.
+function putValidatorsLast(lintEl, checkerEl) {
+  if (lintEl && lintEl.isConnected) document.head.appendChild(lintEl)
+  if (checkerEl && checkerEl.isConnected) document.body.appendChild(checkerEl)
+}
+
+function loadCheckerLikeFreshPage(lintEl, isCancelled) {
   const queued = new Set()
   const calls = []
   const proto = EventTarget.prototype.addEventListener
@@ -52,6 +59,7 @@ function loadCheckerLikeFreshPage(isCancelled) {
     document.onreadystatechange = prevReady
     if (isCancelled()) return
     setTimeout(() => {
+      putValidatorsLast(lintEl, script)
       calls.forEach(([target, type, handler]) => {
         const event = new Event(type)
         if (typeof handler === 'function') handler.call(target, event)
@@ -61,6 +69,7 @@ function loadCheckerLikeFreshPage(isCancelled) {
   }
   script.onload = finish
   script.onerror = restore
+  putValidatorsLast(lintEl, null)
   document.body.appendChild(script)
   return { script, restore }
 }
@@ -80,7 +89,7 @@ export default function Layout() {
       lint.crossOrigin = 'anonymous'
       // Load one after the other so Accumulus stays last in <head> and Vicunadator last in <body>
       const next = () => {
-        if (!cancelled) checker = loadCheckerLikeFreshPage(() => cancelled)
+        if (!cancelled) checker = loadCheckerLikeFreshPage(lint, () => cancelled)
       }
       lint.onload = next
       lint.onerror = next
